@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1= myTitle
-    h3 This is Version 2.0 -- Insert and Delete and Update functionality
+    h3 This is Version 3.0 -- Insert and Delete and Update and Delete All functionality
     form(method='post' action='/insert' id='inputform')
         fieldset
             legend Data Entry
@@ -32,6 +32,9 @@ block content
                     tr
                         td(colspan='4')
                             input(type='submit', value='Delete Selected Row')
+                    tr
+                        td(colspan='4')
+                            input(type='submit', formaction='/deleteall' value="Delete All Rows")
                     tr
                         td(colspan='3')
                             input(type='submit', formaction='/update' value='Update Selected Row')
