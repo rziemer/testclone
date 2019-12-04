@@ -8,6 +8,14 @@ var indexRouter = require('./routes/index');
 var echoRouter = require('./routes/echo');
 var deleteRouter = require('./routes/delete');
 var insertRouter = require('./routes/insert');
+// The line below is incorrect
+var updateRouter = require('./routes/updateentry');
+// It should read: var updateRouter = require('./routes/update');
+// as it needs to match the name of the routes javascript file for the update
+//
+// As such this causes a build error which prevents 'npm start' from executing
+//
+
 
 var app = express();
 
@@ -25,6 +33,7 @@ app.use('/', indexRouter);
 app.use('/echo', echoRouter);
 app.use('/delete', deleteRouter);
 app.use('/insert', insertRouter);
+app.use('/update', updateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
